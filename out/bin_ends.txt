@@ -1,0 +1,28 @@
+p=1/100 OPT=98039601/100000000 (0.980396) minimizers=1 example=(789, 789, 789)
+   input 001: counts by delivered links [1, 4, 9, 12, 8, 2, 0]
+   input 010: counts by delivered links [1, 4, 9, 12, 8, 2, 0]
+   input 011: counts by delivered links [1, 4, 9, 12, 8, 2, 0]
+   input 100: counts by delivered links [1, 4, 9, 12, 8, 2, 0]
+   input 101: counts by delivered links [1, 4, 9, 12, 8, 2, 0]
+   input 110: counts by delivered links [1, 4, 9, 12, 8, 2, 0]
+p=1/20 OPT=145521/160000 (0.909506) minimizers=1 example=(789, 789, 789)
+   input 001: counts by delivered links [1, 4, 9, 12, 8, 2, 0]
+   input 010: counts by delivered links [1, 4, 9, 12, 8, 2, 0]
+   input 011: counts by delivered links [1, 4, 9, 12, 8, 2, 0]
+   input 100: counts by delivered links [1, 4, 9, 12, 8, 2, 0]
+   input 101: counts by delivered links [1, 4, 9, 12, 8, 2, 0]
+   input 110: counts by delivered links [1, 4, 9, 12, 8, 2, 0]
+p=19/20 OPT=15201/160000 (0.095006) minimizers=1 example=(789, 789, 789)
+   input 001: counts by delivered links [1, 4, 9, 12, 8, 2, 0]
+   input 010: counts by delivered links [1, 4, 9, 12, 8, 2, 0]
+   input 011: counts by delivered links [1, 4, 9, 12, 8, 2, 0]
+   input 100: counts by delivered links [1, 4, 9, 12, 8, 2, 0]
+   input 101: counts by delivered links [1, 4, 9, 12, 8, 2, 0]
+   input 110: counts by delivered links [1, 4, 9, 12, 8, 2, 0]
+p=99/100 OPT=1980001/100000000 (0.019800) minimizers=1 example=(789, 789, 789)
+   input 001: counts by delivered links [1, 4, 9, 12, 8, 2, 0]
+   input 010: counts by delivered links [1, 4, 9, 12, 8, 2, 0]
+   input 011: counts by delivered links [1, 4, 9, 12, 8, 2, 0]
+   input 100: counts by delivered links [1, 4, 9, 12, 8, 2, 0]
+   input 101: counts by delivered links [1, 4, 9, 12, 8, 2, 0]
+   input 110: counts by delivered links [1, 4, 9, 12, 8, 2, 0]

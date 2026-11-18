@@ -1,0 +1,30 @@
+Q=3 anon p=1/10: OPTIMAL OPT=978049/1000000  control OPT-1: INFEASIBLE
+   own 0 heard [0, 1] -> 1; own 0 heard [0, 2] -> 2; own 0 heard [1] -> 1; own 0 heard [1, 1] -> 1; own 0 heard [1, 2] -> 1; own 0 heard [2] -> 2; own 0 heard [2, 2] -> 2; own 1 heard [0] -> 0; own 1 heard [0, 0] -> 1; own 1 heard [0, 1] -> 1; own 1 heard [0, 2] -> 0; own 1 heard [1, 2] -> 2; own 1 heard [2] -> 2; own 1 heard [2, 2] -> 2; own 2 heard [0] -> 0; own 2 heard [0, 0] -> 2; own 2 heard [0, 1] -> 0; own 2 heard [0, 2] -> 2; own 2 heard [1] -> 1; own 2 heard [1, 1] -> 2; own 2 heard [1, 2] -> 2
+Q=3 anon p=1/5: OPTIMAL OPT=14649/15625  control OPT-1: INFEASIBLE
+   own 0 heard [0, 1] -> 1; own 0 heard [0, 2] -> 2; own 0 heard [1] -> 1; own 0 heard [1, 1] -> 1; own 0 heard [1, 2] -> 2; own 0 heard [2] -> 2; own 0 heard [2, 2] -> 2; own 1 heard [0] -> 0; own 1 heard [0, 0] -> 1; own 1 heard [0, 1] -> 1; own 1 heard [0, 2] -> 0; own 1 heard [1, 2] -> 2; own 1 heard [2] -> 2; own 1 heard [2, 2] -> 2; own 2 heard [0] -> 0; own 2 heard [0, 0] -> 2; own 2 heard [0, 1] -> 0; own 2 heard [0, 2] -> 2; own 2 heard [1] -> 1; own 2 heard [1, 1] -> 2; own 2 heard [1, 2] -> 2
+Q=3 anon p=1/4: OPTIMAL OPT=235/256  control OPT-1: INFEASIBLE
+   own 0 heard [0, 1] -> 1; own 0 heard [0, 2] -> 2; own 0 heard [1] -> 1; own 0 heard [1, 1] -> 1; own 0 heard [1, 2] -> 1; own 0 heard [2] -> 0; own 0 heard [2, 2] -> 2; own 1 heard [0] -> 0; own 1 heard [0, 0] -> 1; own 1 heard [0, 1] -> 1; own 1 heard [0, 2] -> 0; own 1 heard [1, 2] -> 2; own 1 heard [2] -> 1; own 1 heard [2, 2] -> 2; own 2 heard [0] -> 0; own 2 heard [0, 0] -> 2; own 2 heard [0, 1] -> 0; own 2 heard [0, 2] -> 0; own 2 heard [1] -> 1; own 2 heard [1, 1] -> 2; own 2 heard [1, 2] -> 1
+Q=3 anon p=1/3: OPTIMAL OPT=71/81  control OPT-1: INFEASIBLE
+   own 0 heard [0, 1] -> 1; own 0 heard [0, 2] -> 2; own 0 heard [1] -> 0; own 0 heard [1, 1] -> 1; own 0 heard [1, 2] -> 2; own 0 heard [2] -> 2; own 0 heard [2, 2] -> 2; own 1 heard [0] -> 0; own 1 heard [0, 0] -> 1; own 1 heard [0, 1] -> 0; own 1 heard [0, 2] -> 0; own 1 heard [1, 2] -> 2; own 1 heard [2] -> 2; own 1 heard [2, 2] -> 2; own 2 heard [0] -> 0; own 2 heard [0, 0] -> 2; own 2 heard [0, 1] -> 0; own 2 heard [0, 2] -> 2; own 2 heard [1] -> 2; own 2 heard [1, 1] -> 1; own 2 heard [1, 2] -> 2
+Q=3 anon p=2/5: OPTIMAL OPT=21/25  control OPT-1: INFEASIBLE
+   own 0 heard [0, 1] -> 1; own 0 heard [0, 2] -> 2; own 0 heard [1] -> 1; own 0 heard [1, 1] -> 1; own 0 heard [1, 2] -> 2; own 0 heard [2] -> 2; own 0 heard [2, 2] -> 2; own 1 heard [0] -> 1; own 1 heard [0, 0] -> 0; own 1 heard [0, 1] -> 1; own 1 heard [0, 2] -> 2; own 1 heard [1, 2] -> 2; own 1 heard [2] -> 2; own 1 heard [2, 2] -> 2; own 2 heard [0] -> 2; own 2 heard [0, 0] -> 0; own 2 heard [0, 1] -> 2; own 2 heard [0, 2] -> 2; own 2 heard [1] -> 2; own 2 heard [1, 1] -> 1; own 2 heard [1, 2] -> 2
+Q=3 anon p=1/2: OPTIMAL OPT=3/4  control OPT-1: INFEASIBLE
+   own 0 heard [0, 1] -> 0; own 0 heard [0, 2] -> 2; own 0 heard [1] -> 0; own 0 heard [1, 1] -> 1; own 0 heard [1, 2] -> 2; own 0 heard [2] -> 2; own 0 heard [2, 2] -> 0; own 1 heard [0] -> 1; own 1 heard [0, 0] -> 0; own 1 heard [0, 1] -> 1; own 1 heard [0, 2] -> 2; own 1 heard [1, 2] -> 2; own 1 heard [2] -> 2; own 1 heard [2, 2] -> 2; own 2 heard [0] -> 2; own 2 heard [0, 0] -> 2; own 2 heard [0, 1] -> 2; own 2 heard [0, 2] -> 0; own 2 heard [1] -> 2; own 2 heard [1, 1] -> 1; own 2 heard [1, 2] -> 2
+        2.48 real         2.82 user         1.01 sys
+           158810112  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+               23881  page reclaims
+                2781  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                 750  voluntary context switches
+                3572  involuntary context switches
+         33163191231  instructions retired
+         12195896576  cycles elapsed
+           114475728  peak memory footprint

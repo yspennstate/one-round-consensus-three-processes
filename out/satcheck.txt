@@ -1,0 +1,19 @@
+courteous counts by direct simulation: [1, 4, 9, 12, 8, 2, 0]
+  input 001: 106 of 128 local assignments dominate the target
+  input 010: 106 of 128 local assignments dominate the target
+  input 011: 106 of 128 local assignments dominate the target
+  input 100: 106 of 128 local assignments dominate the target
+  input 101: 106 of 128 local assignments dominate the target
+  input 110: 106 of 128 local assignments dominate the target
+A: theorem (expect UNSAT = False): False
+  input 001: 101 of 128 local assignments dominate the target
+  input 010: 101 of 128 local assignments dominate the target
+  input 011: 101 of 128 local assignments dominate the target
+  input 100: 101 of 128 local assignments dominate the target
+  input 101: 101 of 128 local assignments dominate the target
+  input 110: 101 of 128 local assignments dominate the target
+A control, target c3+1 (expect SAT = True): True
+B: Q=2 p=1/2 error <= 35/64 feasible: False
+B: Q=2 p=1/2 error <= 36/64 feasible: True
+B: Q=3 p=1/2 error <= 47/64 feasible: False
+B: Q=3 p=1/2 error <= 48/64 feasible: True

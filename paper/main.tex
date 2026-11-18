@@ -1,0 +1,224 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newcommand{\OPT}{\mathrm{OPT}}
+\setlength{\emergencystretch}{3em}
+
+\title{Optimal one-round consensus for three processes through stochastic channels}
+\author{Yitzchak Shmalo$^{\,a}$\thanks{Email address:
+\texttt{yitzchak.shmalo@gmail.com} (Yitzchak Shmalo).}\\
+{\small $^{a}$Einstein Institute of Mathematics, The Hebrew University of
+Jerusalem, Givat Ram,}\\
+{\small Jerusalem, Israel}}
+\date{November 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Three synchronous processes exchange one round of messages, each delivered independently with probability $p$, and each decides an input value it has seen. The error of a deterministic algorithm is the largest probability, over inputs, that the decisions differ. For binary inputs we determine the optimal error for every $p$. It is attained by a majority rule, and the lower bound is a certificate checked over all $2^{30}$ algorithms. With three input values the optimum is strictly larger at $p=1/2$. Three explicit rules give an upper bound that changes form at $1-1/\rho$ and $1-1/\varphi$, with $\rho$ the plastic number and $\varphi$ the golden ratio. The bound equals the exact optimum at twenty-six values of $p$, including points within $2\cdot10^{-4}$ of each place where it changes form, and is sharp to second order as $p\to0$; we conjecture that it is the optimum for every $p$. A shared random bit lowers the binary error to $1-p$, which is better exactly when $p>1-1/\varphi$.
+\end{abstract}
+
+\noindent\textit{Keywords:} consensus, distributed computing, message loss, coordinated attack, exhaustive search.
+
+\noindent\textit{2020 Mathematics Subject Classification:} 68W15, 68Q87, 68M15.
+
+\section{Introduction}\label{sec:intro}
+
+Fraigniaud, Patt-Shamir and Rajsbaum \cite{FPR} studied coordination when every message is lost independently. There are $n$ synchronous processes on a complete network with identifiers $1,\dots,n$. Process $i$ holds an input $x_i$. In each round it sends its state to every other process, and each message is delivered independently with probability $p$; we write $q=1-p$. For two processes they showed that the optimal error of $r$-round consensus is $\min\{p^2+q^2,\,q\}^r$ \cite[Corollary~17]{FPR}, and they asked about multivalued versions of consensus \cite[Section~7]{FPR}. Their algorithms are deterministic, and so are ours.
+
+In a related model a process's broadcast reaches all other processes or none of them. For that model the same authors showed that the optimal deterministic one-round error for three processes is $2p^2q+q^3$ for $p\le2/3$, attained by their algorithm courteous, and $q$ above, attained by a fixed preference \cite{FPR26}. We treat three processes in one round with independent loss on each link, where a process may hear one of the other two processes and not the other. Theorem~\ref{thm:binary} shows that courteous is again optimal, now for every $p$, with the larger error $1-(1-q^2)(1-pq)^2-p^2q^4$; unlike the broadcast model, no fixed preference takes over for large $p$. Section~\ref{sec:three} shows that three input values are harder at $p=1/2$, proves an upper bound built from three explicit rules (Proposition~\ref{prop:upper}), and finds that it is the exact optimum at twenty-six values of $p$, among them pairs of points on either side of the two places where it changes form.
+
+\section{Model}\label{sec:model}
+Fix the number $Q\ge2$ of input values; inputs lie in $\{0,\dots,Q-1\}$. After one round, the view of process $i$ is its own input together with, for each $j\neq i$, either $x_j$ (if the message from $j$ to $i$ was delivered) or a symbol meaning that nothing arrived. A deterministic algorithm assigns to each process $i$ a decision function $\delta_i$ on views. Validity requires the decision to be one of the values in the view. For binary inputs this is the usual validity condition, and in general it is strong validity. The decisions of different processes depend on disjoint sets of messages, so for a fixed input they are independent. For an input $x$ let $E_x(A)$ be the probability that the decisions of $A$ are not all equal, and let
+\[
+E(A)=\max_x E_x(A),\qquad \OPT_{Q}(p)=\min_A E(A),
+\]
+the minimum over deterministic one-round algorithms for three processes with $Q$ input values. Constant inputs never fail, so only the $Q^3-Q$ non-constant inputs matter. A delivery pattern is a subset of the six directed links, and a pattern with $k$ delivered links has probability $p^kq^{6-k}$. Hence
+\begin{equation}\label{eq:counts}
+E_x(A)=\sum_{k=0}^{6} c_k(A,x)\,p^kq^{6-k},
+\end{equation}
+where $c_k(A,x)$ is the number of patterns with $k$ delivered links on which the decisions disagree.
+
+\section{Binary inputs}\label{sec:binary}
+
+Let $M$ be the algorithm courteous of \cite{FPR26}, run by every process: a process decides the majority of the input values it knows, and on a tie the value other than its own input. With three processes this reads as follows. A process that hears nothing decides its own input. A process that hears exactly one message decides the value in that message. A process that hears two messages decides the majority of its own input and the two received values.
+
+\begin{theorem}\label{thm:binary}
+For three processes with binary inputs, one round and every $p\in[0,1]$,
+\[
+\OPT_2(p)=E(M)=1-(1-q^2)(1-pq)^2-p^2q^4 .
+\]
+On every non-constant input the counts of $M$ are $(c_0,\dots,c_6)=(1,4,9,12,8,2,0)$. For every deterministic algorithm $A$ there is an input $x$ with $c_k(A,x)\ge c_k(M,x)$ for $k=0,\dots,6$.
+\end{theorem}
+
+\begin{proof}[Value of $M$]
+$M$ commutes with relabelling the processes and with exchanging the values $0$ and $1$, so its error is the same on all six non-constant inputs. Take $x=(0,0,1)$. Process~3 decides $0$ exactly when it hears at least one message, with probability $1-q^2$. Process~1 decides $1$ exactly when it hears process~3 and not process~2, with probability $pq$, and the same holds for process~2. These three events depend on disjoint links. All decide $0$ with probability $(1-q^2)(1-pq)^2$, and all decide $1$ with probability $q^2(pq)^2$. Expanding gives the counts $(1,4,9,12,8,2,0)$.
+\end{proof}
+
+\begin{proof}[Lower bound]
+By \eqref{eq:counts} the second statement gives $E(A)\ge E_x(A)\ge E_x(M)=E(M)$ for every $p\in[0,1]$, since $p^kq^{6-k}\ge0$. It remains to check the second statement, which is a finite computation.
+
+A view of process $i$ that contains only one value forces the decision. A view with input $a$ contains the other value $1-a$ for five of the nine combinations of the two incoming messages. So each process has ten free views and $2^{10}$ decision functions, and there are $2^{30}$ algorithms. For each process, each of its $2^{10}$ functions and each input $x$, we tabulate the decision on each of the $2^6$ patterns. Then for each triple of functions and each input we count the disagreeing patterns by the number of delivered links. All counts are integers, so the comparison with $(1,4,9,12,8,2,0)$ is exact. Every one of the $2^{30}$ algorithms has an input whose seven counts are at least those of $M$.
+
+As a control, the check was run on the algorithms in which process~1 uses $M$, with one count of the target raised by one, $c_3=13$ in place of $12$. It then fails, and $M$ itself is reported, as it must be. The tabulation was compared with direct simulation of 300 algorithms, drawn at random with a fixed seed, on all six inputs, with no mismatch. Two further programs agree with the value $E(M)$ at $p=1/5$, $1/2$ and $4/5$. One is a mixed integer program in floating point, solved by HiGHS \cite{HiGHS}. The other is a model for CP-SAT, the constraint programming (CP) solver of OR-Tools built on Boolean satisfiability (SAT) techniques \cite{ORTools} with integer weights $a^k(b-a)^{6-k}$ at $p=a/b$, in which the bound one below the optimum is infeasible. A fourth program shares no code with the others. On each of the six inputs only seven decision bits matter, so it lists by direct simulation the local assignments whose counts dominate $(1,4,9,12,8,2,0)$, and asks the SAT solver CaDiCaL \cite{CaDiCaL}, called through PySAT \cite{PySAT}, for an algorithm that avoids them on all six inputs. There is none; with $c_3=13$ in place of $12$ one is found.
+\end{proof}
+
+\begin{proposition}\label{prop:unique}
+Let $p$ be one of $1/100$, $1/20$, $1/10$, $1/5$, $1/4$, $1/3$, $2/5$, $1/2$, $3/5$, $2/3$, $7/10$, $4/5$, $9/10$, $19/20$, $99/100$. Then $M$ is the only deterministic algorithm $A$ with $E(A)=\OPT_2(p)$.
+\end{proposition}
+
+\begin{proof}
+For each of these values of $p$, the exact errors $E(A)$ of all $2^{30}$ algorithms are computed from the tabulated counts of the proof of Theorem~\ref{thm:binary}, and the minimum is attained once.
+\end{proof}
+
+The proposition is a computation at each listed $p$ and says nothing about uniqueness at other values.
+
+\begin{remark}[Shared randomness]\label{rem:coin}
+Let $P_0$ be the algorithm pref0 of \cite{FPR26}: decide $0$ whenever the view contains a $0$. Let $P_1$ be pref1, defined in the same way for $1$. On an input with one $0$, $P_0$ fails with probability $1-p^2$ and $P_1$ with probability $q^2$; on an input with two $0$'s the roles are exchanged. If the processes share one fair coin and run $P_0$ or $P_1$ according to it, the error on every non-constant input is $\tfrac12(q^2+1-p^2)=q$. Since
+\[
+E(M)-q=-pq\,(p^2-3p+1),
+\]
+this mixture is better than every deterministic algorithm exactly when $(3-\sqrt5)/2<p<1$. For two processes no such gain is possible, since $\min\{p^2+q^2,q\}\le q$. For three processes we do not know the optimum over shared or private randomness.
+\end{remark}
+
+\section{Three input values}\label{sec:three}
+
+Restricting the inputs to $\{0,1\}$ gives $\OPT_3\ge\OPT_2$. Moreover each process has views with three values, and the rule must coordinate across pairs of values.
+
+\begin{proposition}\label{prop:half}
+$\OPT_3(1/2)>\OPT_2(1/2)=9/16$.
+\end{proposition}
+
+\begin{proof}
+Suppose an algorithm $A$ for three values has $E(A)\le 9/16$ at $p=1/2$. For each pair $\{u,v\}$ of values, the inputs over $\{u,v\}$ produce only views over $\{u,v\}$, so $A$ restricted to them is a binary algorithm with error at most $9/16$. By Proposition~\ref{prop:unique} at $p=1/2$, it is $M$ up to the names of the values, and $M$ is symmetric in the two values. Now take the input $(0,1,2)$. A process that hears nothing decides its own value, and a process that hears exactly one message decides the value in it; these views have at most two values, so $M$ fixes the decision. A process that hears two messages sees three values and decides some value $c_i$. At $p=1/2$ each of the three values has probability $1/4$ from the first two cases, so process $i$ decides $v$ with probability $1/4+\tfrac14[v=c_i]$. The decisions are independent, so the probability that all agree is
+\[
+\sum_{v}\prod_{i}\Bigl(\tfrac14+\tfrac14[v=c_i]\Bigr)=\frac1{64}\sum_v 2^{m_v}\le\frac{8+1+1}{64}=\frac5{32},
+\]
+where $m_v$ is the number of $i$ with $c_i=v$ and $\sum_v m_v=3$. Hence $E_{(0,1,2)}(A)\ge 27/32>9/16$, a contradiction.
+\end{proof}
+
+Three rules give the upper bound. All three are the same at every process and use only the order of the values.
+\begin{itemize}
+\item[$m$:] decide the smallest value in the view. On two values this is pref0 of \cite{FPR26}.
+\item[$s$:] a process that hears nothing decides its own value; otherwise it decides the smallest value it hears.
+\item[$t$:] as $s$, except that a process whose only message carries the largest value $2$ decides its own value.
+\end{itemize}
+
+\begin{proposition}\label{prop:upper}
+For every $p\in[0,1]$,
+\[
+\OPT_3(p)\le U(p):=\min\bigl\{\,1-p^2q^2(1+q+q^2),\ 1-p^2q(1+q),\ 1-p^2\,\bigr\}.
+\]
+The first term is the error of $s$ for every $p$, the second is the error of $t$ for $p\le 2-\sqrt2$, and the third is the error of $m$ for every $p$. The first two terms are equal where $q^3+q^2=1$, that is at $p=1-1/\rho=0.24512\dots$ with $\rho$ the real root of $x^3=x+1$. The last two are equal where $q^2+q=1$, that is at $p=1-1/\varphi=(3-\sqrt5)/2$ with $\varphi$ the golden ratio. So $U$ is the error of $s$ on $[0,1-1/\rho]$, of $t$ on $[1-1/\rho,(3-\sqrt5)/2]$ and of $m$ on $[(3-\sqrt5)/2,1]$.
+\end{proposition}
+
+\begin{proof}
+In each rule a process's decision depends only on its two incoming links, so the decisions are independent given the input. Write $H_v$ for the holder of $v$ on the input $(0,1,2)$.
+
+Rule $m$. On $(0,1,2)$ all decide $0$ exactly when $H_1$ and $H_2$ hear $H_0$, and no other value can be common, so the error is $1-p^2$. The same holds on every input whose smallest value occurs once. On an input whose smallest value occurs twice, the third process must hear one of the two holders, so the error is $q^2\le1-p^2$.
+
+Rule $s$. On $(0,1,2)$, all decide $0$ when $H_0$ hears nothing and $H_1,H_2$ both hear $H_0$, with probability $q^2\cdot p\cdot p$. All decide $1$ when $H_1$ hears nothing, $H_0$ hears $H_1$, and $H_2$ hears $H_1$ but not $H_0$, with probability $q^2\cdot p\cdot pq$. All decide $2$ when $H_2$ hears nothing and $H_0,H_1$ hear only $H_2$, with probability $q^2(pq)^2$. The agreement is $p^2q^2(1+q+q^2)$, and every input with three distinct values gives the same, because the rule is the same at every process. On an input with two values, a process that hears one message adopts it and a process that hears two messages takes the smaller value heard. If the repeated value is the smaller, this is $M$ of Theorem~\ref{thm:binary}, with error $E(M)$. If it is the larger, say on $(0,1,1)$, all decide $0$ when $H_0$ hears nothing and both other processes hear it, with probability $p^2q^2$, and all decide $1$ when $H_0$ hears something and neither other process hears $H_0$, with probability $(1-q^2)q^2$; the agreement is $2pq^2$. Both agreements are at least $p^2q^2(1+q+q^2)$. For $2pq^2$ this is $p(1+q+q^2)\le(1-q)(1+q+q^2)=1-q^3\le 2$. For $1-E(M)$, $1-E(M)\ge(1-q^2)(1-pq)^2=p(1+q)(1-pq)^2\ge\tfrac9{16}p(1+q)$, while $p^2q^2(1+q+q^2)\le\tfrac14 pq(1+q+q^2)\le\tfrac14p(1+2q)$, and $\tfrac14(1+2q)\le\tfrac9{16}(1+q)$.
+
+Rule $t$. On $(0,1,2)$, $H_0$ decides $0$ unless it hears $H_1$, with probability $q$, and $H_1,H_2$ decide $0$ exactly when they hear $H_0$; this gives $p^2q$. All decide $1$ when $H_1$ does not hear $H_0$ (probability $q$), $H_0$ hears $H_1$ and $H_2$ hears $H_1$ but not $H_0$; this gives $p^2q^2$. No process other than $H_2$ ever decides $2$. The agreement is $p^2q(1+q)$ on each of the six inputs with three distinct values. On the inputs with two values there are four cases. With a single $2$, all decide the other value unless the holder of $2$ hears nothing, since the other two ignore a lone $2$ and the holder of $2$ adopts any smaller value it hears; the agreement is $1-q^2$. With a repeated $2$ and a single $u\in\{0,1\}$, the holder of $u$ decides $2$ exactly when it hears both holders of $2$, and a holder of $2$ decides $u$ exactly when it hears the holder of $u$, since it ignores a lone $2$. All decide $u$ with probability $(1-p^2)p^2$ and all decide $2$ with probability $p^2q^2$; the agreement is $p^2(1-p^2+q^2)=2p^2q$. On $\{0,1\}$ with $0$ repeated the rule is $M$, with agreement $1-E(M)$. On $\{0,1\}$ with $1$ repeated it acts as $s$ does, with agreement $2pq^2$. Since $p^2q(1+q)\le p(1+q)=1-q^2$, $p^2q(1+q)\le2p^2q$, $p^2q(1+q)\le 2pq^2$ exactly when $p^2-4p+2\ge0$, that is $p\le2-\sqrt2$, and $1-E(M)\ge p(1+q)(1-pq)^2\ge p^2q(1+q)$ because $(1-pq)^2\ge\tfrac9{16}>\tfrac14\ge pq$, the six inputs with distinct values are the worst for $p\le2-\sqrt2$.
+
+Finally $(1-p^2q(1+q))-(1-p^2q^2(1+q+q^2))=p^2q(q^3+q^2-1)$ changes sign only where $q^3+q^2=1$, and $(1-p^2)-(1-p^2q(1+q))=p^2(q^2+q-1)$ changes sign only where $q^2+q=1$. Since $2-\sqrt2>(3-\sqrt5)/2$, the bound for $t$ is used only where it holds.
+\end{proof}
+
+As $p\to0$ the bound is sharp to second order. On an input with three distinct values, a pattern with at most one delivered link leaves two processes hearing nothing, and they decide different values. With two delivered links some process hears nothing, so the common value can only be its own, and both other processes must hear it; this leaves three such patterns. Hence $\OPT_3(p)\ge 1-3p^2q^4-\Pr[\text{at least three links}]=1-3p^2+O(p^3)$, and $s$ attains $1-3p^2+O(p^3)$. Both implied constants are absolute, since every probability here is a polynomial in $p$ of degree at most $6$ with integer coefficients.
+
+Table~\ref{tab:three} gives $\OPT_3$ at ten values of $p$. Each entry is computed by a CP-SAT model \cite{ORTools} with the integer weights $a^k(b-a)^{6-k}$ at $p=a/b$. It has one Boolean decision variable for each free view and value, and one agreement indicator for each input, pattern and value, constrained by the decisions. The solver reports the entry optimal and reports the bound one unit below infeasible. The rule it returns is evaluated again by direct enumeration in rational arithmetic, and the value matches. The same model with two values reproduces Theorem~\ref{thm:binary} at $p=1/5$, $1/2$ and $4/5$. These entries rely on the solver's proofs of infeasibility. A mixed integer program in floating point gives the same values at the seven points where both were run.
+
+\begin{table}[tbp]
+\centering
+\begin{tabular}{lcccccccccc}
+\toprule
+$p$ & $1/10$ & $1/5$ & $1/4$ & $1/3$ & $2/5$ & $9/20$ & $1/2$ & $2/3$ & $4/5$ & $9/10$\\
+\midrule
+$\OPT_3(p)$ & $\frac{978049}{10^6}$ & $\frac{14649}{15625}$ & $\frac{235}{256}$ & $\frac{71}{81}$ & $\frac{21}{25}$ & $\frac{319}{400}$ & $\frac34$ & $\frac59$ & $\frac9{25}$ & $\frac{19}{100}$\\
+attained by & $s$ & $s$ & $t$ & $t$ & $m$ & $m$ & $m$ & $m$ & $m$ & $m$\\
+$\OPT_2(p)$ & $\frac{8361}{10^4}$ & $\frac{456}{625}$ & $\frac{177}{256}$ & $\frac{52}{81}$ & $\frac{381}{625}$ & $\frac{93841}{160000}$ & $\frac9{16}$ & $\frac{37}{81}$ & $\frac{201}{625}$ & $\frac{1801}{10^4}$\\
+\bottomrule
+\end{tabular}
+\caption{The optimal error for three processes in one round with three input values and with two. At each $p$ the rule in the second row attains $\OPT_3(p)$, so $\OPT_3(p)=U(p)$ there.}\label{tab:three}
+\end{table}
+
+At each of the ten values in the table and at the sixteen values
+\[
+p=\tfrac1{20},\ \tfrac3{20},\ \tfrac6{25},\ \tfrac{25}{102},\ \tfrac{38}{155},\ \tfrac{37}{150},\ \tfrac3{10},\ \tfrac7{20},\ \tfrac38,\ \tfrac{19}{50},\ \tfrac8{21},\ \tfrac{21}{55},\ \tfrac{34}{89},\ \tfrac{13}{34},\ \tfrac{77}{200},\ \tfrac{39}{100},
+\]
+the optimum equals $U(p)$. The points $25/102$ and $38/155$ lie on either side of $1-1/\rho=0.24512\dots$, at distances $2.4\cdot10^{-5}$ and $3.9\cdot10^{-5}$, where $U$ passes from $s$ to $t$; the optimum there is the error of $s$ and of $t$ respectively. The points $21/55$ and $34/89$ lie on either side of $(3-\sqrt5)/2=0.38196\dots$, at distances $1.5\cdot10^{-4}$ and $5.6\cdot10^{-5}$, where $U$ passes from $t$ to $m$; the optimum there is the error of $t$ and of $m$ respectively. At $p=1/2$ the value $3/4$ was also checked by a second program that shares no code with the first. It counts failing patterns by direct simulation and asks the SAT solver CaDiCaL whether some rule has at most $K$ of the $64$ patterns failing on every input. The answer is no for $K=47$ and yes for $K=48$.
+
+\begin{conjecture}\label{conj:three}
+$\OPT_3(p)=U(p)$ for every $p\in[0,1]$.
+\end{conjecture}
+
+\section{Computations}
+All counts are exact integers and all values exact rationals. Appendix~\ref{app:notation} lists the symbols. The code, the outputs and the optimal rules found at each $p$ are at \url{https://github.com/yspennstate/one-round-consensus-three-processes}.
+
+\section*{Credits}
+The results rest on the work of others. The model, the two-process optimum and the question about multivalued consensus are due to Fraigniaud, Patt-Shamir and Rajsbaum \cite{FPR}. The restriction to deterministic algorithms, the worst-input error measure, and the comparison with a fixed preference follow their work on the broadcast model \cite{FPR26}. Randomized coordinated attack, which motivates the probabilistic formulation, is due to Varghese and Lynch \cite{VL}. The counting form \eqref{eq:counts}, the certificate of Theorem~\ref{thm:binary}, Proposition~\ref{prop:half}, Remark~\ref{rem:coin}, the rules $s$ and $t$, Proposition~\ref{prop:upper}, Table~\ref{tab:three} and Conjecture~\ref{conj:three} are new; on two values the rule $m$ is the algorithm pref0 of \cite{FPR26}.
+
+\section*{Funding}
+The research presented in this paper was supported by the European Research Council (ERC) under the European Union's Horizon Europe research and innovation programme (grant agreement No.~101041711), by the Simons Foundation as part of the Collaboration on the Mathematical and Scientific Foundations of Deep Learning, by Heights Labs, by Convex Nexus Capital, by the Israel Science Foundation (grant number 2258/19), and by the Israel Science Foundation (ISF Grant 4101/25).
+
+\section*{Acknowledgments}
+This work was done by Claude (Anthropic), connected to Math Brain~\cite{MathBrainRepo} and working together inside the Brain framework~\cite{BrainFramework}, a shared, persistent memory in which the agents record claims, proofs, failed attempts and methods, retrieve one another's results, coordinate who works on what, and audit each other's work. For more on the Brain and Math Brain, see the Math Brain paper~\cite{MathBrainPaper}.
+
+\section*{Code and data availability}
+The code and data are at \url{https://github.com/yspennstate/one-round-consensus-three-processes}. The paper is part of the Math Brain project, whose public repository is \url{https://github.com/yspennstate/math-brain-public}~\cite{MathBrainRepo}.
+
+\section*{Declaration of generative AI and AI-assisted technologies}
+This paper is part of a broader research project on AI systems proving mathematical results. The computations, proofs and text were produced by Claude (Anthropic). The model and the two-process solution are due to Fraigniaud, Patt-Shamir and Rajsbaum \cite{FPR}, who asked about multivalued consensus. The value of $\OPT_3$ between the listed points, private randomness, more rounds and more processes remain open. The author directed the work and is responsible for the content of the paper and for decisions concerning its dissemination.
+
+\section*{Declaration of competing interest}
+The author holds equity in Heights Labs and in Convex Nexus Capital and has a management role at Convex Nexus Capital. These entities are included in the funding declaration above.
+
+\appendix
+\section{Notation}\label{app:notation}
+Symbols are listed in the order in which they first appear.
+
+\begin{center}\begin{tabular}{@{}lp{0.55\textwidth}l@{}}\toprule
+Symbol & Meaning & First appears \\ \midrule
+$p$, $q$ & probability that a message is delivered; $q=1-p$ & Section~\ref{sec:intro} \\
+$r$ & number of rounds (two-process result only) & Section~\ref{sec:intro} \\
+$x=(x_1,x_2,x_3)$ & input; $x_i$ is the input of process $i$ & Section~\ref{sec:intro} \\
+$Q$ & number of input values, inputs in $\{0,\dots,Q-1\}$ & Section~\ref{sec:model} \\
+$\delta_i$ & decision function of process $i$ on its views & Section~\ref{sec:model} \\
+$A$ & a deterministic one-round algorithm & Section~\ref{sec:model} \\
+$E_x(A)$, $E(A)$ & probability on input $x$ that the decisions of $A$ differ; its maximum over $x$ & Section~\ref{sec:model} \\
+$\OPT_Q(p)$ & least $E(A)$ over deterministic one-round algorithms & Section~\ref{sec:model} \\
+$c_k(A,x)$ & number of patterns with $k$ delivered links on which $A$ disagrees on $x$ & \eqref{eq:counts} \\
+$M$ & the algorithm courteous of \cite{FPR26} & Section~\ref{sec:binary} \\
+$a/b$ & $p$ written as a fraction, for the integer weights $a^k(b-a)^{6-k}$ & Section~\ref{sec:binary} \\
+$P_0$, $P_1$ & the algorithms pref0 and pref1 of \cite{FPR26} & Remark~\ref{rem:coin} \\
+$u$, $v$ & input values, as in $\{u,v\}$ & Section~\ref{sec:three} \\
+$m$, $s$, $t$ & the three rules for three values & Section~\ref{sec:three} \\
+$U(p)$ & the upper bound of Proposition~\ref{prop:upper} & Proposition~\ref{prop:upper} \\
+$\rho$, $\varphi$ & the plastic number, real root of $x^3=x+1$; the golden ratio & Proposition~\ref{prop:upper} \\
+$H_v$ & the process holding the value $v$ & proof of Proposition~\ref{prop:upper} \\
+$K$ & bound on the number of failing patterns in the SAT check & Section~\ref{sec:three} \\
+\bottomrule\end{tabular}\end{center}
+
+\begin{thebibliography}{9}
+\bibitem{FPR} P.~Fraigniaud, B.~Patt-Shamir and S.~Rajsbaum, Coordination through stochastic channels, in \emph{39th International Symposium on Distributed Computing (DISC 2025)}, LIPIcs 356, paper 32, 2025. doi:10.4230/LIPIcs.DISC.2025.32.
+\bibitem{FPR26} P.~Fraigniaud, B.~Patt-Shamir and S.~Rajsbaum, Consensus with stochastic broadcast, in \emph{40th International Symposium on Distributed Computing (DISC 2026)}, LIPIcs 397 (2026), 18:1--18:17, doi:10.4230/LIPIcs.DISC.2026.18.
+\bibitem{VL} G.~Varghese and N.~A.~Lynch, A tradeoff between safety and liveness for randomized coordinated attack, \emph{Information and Computation} 128 (1996), 57--71, doi:10.1006/inco.1996.0063.
+\bibitem{HiGHS} Q.~Huangfu and J.~A.~J.~Hall, Parallelizing the dual revised simplex method, \emph{Math. Program. Comput.} 10 (2018), 119--142, doi:10.1007/s12532-017-0130-5.
+\bibitem{CaDiCaL} A.~Biere, K.~Fazekas, M.~Fleury and M.~Heisinger, CaDiCaL, Kissat, Paracooba, Plingeling and Treengeling entering the SAT Competition 2020, in \emph{Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions}, Department of Computer Science Report Series B, B-2020-1, University of Helsinki, 2020, 50--53.
+\bibitem{PySAT} A.~Ignatiev, A.~Morgado and J.~Marques-Silva, PySAT: a Python toolkit for prototyping with SAT oracles, in \emph{Theory and Applications of Satisfiability Testing -- SAT 2018}, Lecture Notes in Comput. Sci. 10929, Springer, 2018, 428--437, doi:10.1007/978-3-319-94144-8\_26.
+\bibitem{ORTools} L.~Perron and F.~Didier, CP-SAT, Google OR-Tools, version 9.15, 2026, \url{https://developers.google.com/optimization}.
+\bibitem{MathBrainRepo} Y.~Shmalo, \emph{Math Brain: public snapshot, code and tests}, 2026, \url{https://github.com/yspennstate/math-brain-public}.
+\bibitem{MathBrainPaper} Y.~Shmalo, \emph{Math Brain: shared, auditable memory for multi-agent mathematical research}, October 2026, doi:10.5281/zenodo.24150837.
+\bibitem{BrainFramework} Y.~Shmalo, \emph{Brain Framework}, public software repository, 2026, \url{https://github.com/yspennstate/brain-framework-public}.
+\end{thebibliography}
+
+\end{document}

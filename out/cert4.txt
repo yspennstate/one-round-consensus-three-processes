@@ -1,0 +1,29 @@
+courteous counts (every input): [1, 4, 9, 12, 8, 2, 0]
+  a0 128/1024: residue algorithms 0, distinct residue tuples 0
+  a0 256/1024: residue algorithms 0, distinct residue tuples 0
+  a0 384/1024: residue algorithms 0, distinct residue tuples 0
+  a0 512/1024: residue algorithms 0, distinct residue tuples 0
+  a0 640/1024: residue algorithms 0, distinct residue tuples 0
+  a0 768/1024: residue algorithms 0, distinct residue tuples 0
+  a0 896/1024: residue algorithms 0, distinct residue tuples 0
+  a0 1024/1024: residue algorithms 0, distinct residue tuples 0
+residue algorithms (no single input dominates in Bernstein form): 0; distinct tuples 0
+CERT4 ALL OK
+      169.78 real       166.87 user         0.54 sys
+           252837888  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+               20234  page reclaims
+                 630  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                 322  voluntary context switches
+              183376  involuntary context switches
+       2744543215329  instructions retired
+        677192539414  cycles elapsed
+           240304872  peak memory footprint

@@ -1,0 +1,35 @@
+milp3.py:106: RuntimeWarning: Unrecognized options detected: {'mip_feasibility_tolerance'}. These will be passed to HiGHS verbatim.
+  res = milp(cvec, constraints=LinearConstraint(A.tocsr(), lo, hi), integrality=integrality,
+n=3 q=3 p=1/10 milp_status=0 milp_obj=0.978049000 mip_dual_bound=0.978049000 exact_rule_value=978049/1000000 (0.978049000)
+   counts [1, 6, 12, 17, 14, 6, 1] value 0.978049 inputs 012 021 102 120 201 210
+   counts [1, 4, 10, 16, 13, 4, 0] value 0.846000 inputs 001 002 010 011 022 100 101 110 112 121 122 200 202 211 212 220 221
+   counts [1, 4, 9, 14, 13, 6, 1] value 0.838000 inputs 020
+n=3 q=3 p=1/5 milp_status=0 milp_obj=0.937536000 mip_dual_bound=0.937536000 exact_rule_value=14649/15625 (0.937536000)
+   counts [1, 6, 12, 17, 14, 6, 1] value 0.937536 inputs 012 021 102 120 201 210
+   counts [1, 4, 10, 16, 13, 4, 0] value 0.768000 inputs 001 002 010 011 022 100 101 110 112 121 122 200 202 211 212 220 221
+   counts [1, 4, 9, 14, 13, 6, 1] value 0.744000 inputs 020
+n=3 q=3 p=1/3 milp_status=0 milp_obj=0.876543210 mip_dual_bound=0.876543210 exact_rule_value=71/81 (0.876543210)
+   counts [1, 6, 13, 15, 11, 5, 1] value 0.876543 inputs 012 021 102 120 201 210
+   counts [1, 5, 12, 17, 13, 4, 0] value 0.839506 inputs 001 010 011 100 101 110
+   counts [1, 5, 12, 16, 11, 3, 0] value 0.814815 inputs 002 121 200 211
+   counts [1, 5, 11, 14, 11, 5, 1] value 0.777778 inputs 020 112
+   counts [1, 4, 9, 15, 14, 5, 0] value 0.716049 inputs 022 122 202 212 220 221
+n=3 q=3 p=1/2 milp_status=0 milp_obj=0.750000000 mip_dual_bound=0.750000000 exact_rule_value=3/4 (0.750000000)
+   counts [1, 5, 11, 14, 11, 5, 1] value 0.750000 inputs 002 022 200 202
+   counts [1, 6, 14, 16, 9, 2, 0] value 0.750000 inputs 011 012 020 021 101 102 110 112 120 121 201 210 211
+   counts [1, 4, 7, 12, 14, 6, 0] value 0.687500 inputs 001 212 220 221
+   counts [1, 4, 7, 10, 11, 6, 1] value 0.625000 inputs 010
+   counts [1, 4, 6, 8, 10, 6, 1] value 0.562500 inputs 100 122
+n=3 q=3 p=2/3 milp_status=0 milp_obj=0.555555556 mip_dual_bound=0.555555556 exact_rule_value=5/9 (0.555555556)
+   counts [1, 6, 14, 16, 9, 2, 0] value 0.555556 inputs 010 012 021 022 100 102 120 122 201 202 210 212 220 221
+   counts [1, 5, 11, 13, 8, 2, 0] value 0.481481 inputs 001 101
+   counts [1, 4, 6, 4, 1, 0, 0] value 0.111111 inputs 002 011 020 110 112 121 200 211
+n=3 q=3 p=4/5 milp_status=0 milp_obj=0.360000000 mip_dual_bound=0.360000000 exact_rule_value=9/25 (0.360000000)
+   counts [1, 6, 14, 16, 9, 2, 0] value 0.360000 inputs 001 002 010 012 020 021 100 102 120 122 200 201 210 212
+   counts [1, 5, 11, 13, 8, 2, 0] value 0.328000 inputs 211 221
+   counts [1, 4, 6, 4, 1, 0, 0] value 0.040000 inputs 011 022 101 110 112 121 202 220
+n=3 q=3 p=9/10 milp_status=0 milp_obj=0.190000000 mip_dual_bound=0.190000000 exact_rule_value=19/100 (0.190000000)
+   counts [1, 6, 14, 16, 9, 2, 0] value 0.190000 inputs 011 012 021 022 102 110 120 121 200 201 210 211
+   counts [1, 5, 11, 13, 8, 2, 0] value 0.181000 inputs 020 100 122
+   counts [1, 5, 10, 10, 5, 1, 0] value 0.100000 inputs 001 002 101 112 202 212
+   counts [1, 4, 6, 4, 1, 0, 0] value 0.010000 inputs 010 220 221

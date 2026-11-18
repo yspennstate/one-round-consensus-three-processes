@@ -1,0 +1,25 @@
+venv ok 9.15.6755 1.13.1
+n=3 q=2 p=1/5: OPTIMAL OPT=456/625 exact_eval=456/625 match=True
+   control t<=OPT-1: INFEASIBLE (must be INFEASIBLE); t<=OPT: OPTIMAL (must be FEASIBLE or OPTIMAL)
+   input 001 counts [1, 4, 9, 12, 8, 2, 0]
+   input 010 counts [1, 4, 9, 12, 8, 2, 0]
+   input 011 counts [1, 4, 9, 12, 8, 2, 0]
+   input 100 counts [1, 4, 9, 12, 8, 2, 0]
+   input 101 counts [1, 4, 9, 12, 8, 2, 0]
+   input 110 counts [1, 4, 9, 12, 8, 2, 0]
+n=3 q=2 p=1/2: OPTIMAL OPT=9/16 exact_eval=9/16 match=True
+   control t<=OPT-1: INFEASIBLE (must be INFEASIBLE); t<=OPT: OPTIMAL (must be FEASIBLE or OPTIMAL)
+   input 001 counts [1, 4, 9, 12, 8, 2, 0]
+   input 010 counts [1, 4, 9, 12, 8, 2, 0]
+   input 011 counts [1, 4, 9, 12, 8, 2, 0]
+   input 100 counts [1, 4, 9, 12, 8, 2, 0]
+   input 101 counts [1, 4, 9, 12, 8, 2, 0]
+   input 110 counts [1, 4, 9, 12, 8, 2, 0]
+n=3 q=2 p=4/5: OPTIMAL OPT=201/625 exact_eval=201/625 match=True
+   control t<=OPT-1: INFEASIBLE (must be INFEASIBLE); t<=OPT: OPTIMAL (must be FEASIBLE or OPTIMAL)
+   input 001 counts [1, 4, 9, 12, 8, 2, 0]
+   input 010 counts [1, 4, 9, 12, 8, 2, 0]
+   input 011 counts [1, 4, 9, 12, 8, 2, 0]
+   input 100 counts [1, 4, 9, 12, 8, 2, 0]
+   input 101 counts [1, 4, 9, 12, 8, 2, 0]
+   input 110 counts [1, 4, 9, 12, 8, 2, 0]

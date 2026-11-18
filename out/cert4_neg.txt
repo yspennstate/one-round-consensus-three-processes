@@ -1,0 +1,23 @@
+courteous counts (every input): [1, 4, 9, 12, 8, 2, 0]
+NEGATIVE CONTROL: target raised at k=3, scanning a0 = courteous only
+residue algorithms (no single input dominates in Bernstein form): 1; distinct tuples 1
+  FAIL at p = 1/2 max D = -1/64 tuple [(np.int32(0), np.int32(0), np.int32(0), np.int32(-1), np.int32(0), np.int32(0), np.int32(0)), (np.int32(0), np.int32(0), np.int32(0), np.int32(-1), np.int32(0), np.int32(0), np.int32(0)), (np.int32(0), np.int32(0), np.int32(0), np.int32(-1), np.int32(0), np.int32(0), np.int32(0)), (np.int32(0), np.int32(0), np.int32(0), np.int32(-1), np.int32(0), np.int32(0), np.int32(0)), (np.int32(0), np.int32(0), np.int32(0), np.int32(-1), np.int32(0), np.int32(0), np.int32(0)), (np.int32(0), np.int32(0), np.int32(0), np.int32(-1), np.int32(0), np.int32(0), np.int32(0))]
+CERT4 FAILED on 1 distinct tuples
+        0.54 real         0.35 user         0.06 sys
+           287047680  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+               17658  page reclaims
+                 180  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                1258  voluntary context switches
+                 653  involuntary context switches
+          5342941557  instructions retired
+          1824998250  cycles elapsed
+           273744640  peak memory footprint

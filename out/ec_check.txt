@@ -1,0 +1,7 @@
+closed form matches counts: True
+E_c - q = p*(p - 1)*(p**2 - 3*p + 1)
+root 0 0.0
+root 3/2 - sqrt(5)/2 0.38196601125010515
+root 1 1.0
+root sqrt(5)/2 + 3/2 2.618033988749895
+E_c(1/2) = 9/16  E_c(2/5) = 381/625

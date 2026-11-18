@@ -1,0 +1,7 @@
+selfcheck 300 random algorithms x 6 inputs: mismatches 0
+courteous 001 [1, 4, 9, 12, 8, 2, 0]
+courteous 010 [1, 4, 9, 12, 8, 2, 0]
+courteous 011 [1, 4, 9, 12, 8, 2, 0]
+courteous 100 [1, 4, 9, 12, 8, 2, 0]
+courteous 101 [1, 4, 9, 12, 8, 2, 0]
+courteous 110 [1, 4, 9, 12, 8, 2, 0]

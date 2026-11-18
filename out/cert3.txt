@@ -1,0 +1,32 @@
+6 x courteous counts: [6, 24, 54, 72, 48, 12, 0]
+  a0 128/1024: algorithms with a negative Bernstein entry so far 795607, distinct vectors 1148
+  a0 256/1024: algorithms with a negative Bernstein entry so far 934557, distinct vectors 1148
+  a0 384/1024: algorithms with a negative Bernstein entry so far 1974579, distinct vectors 1267
+  a0 512/1024: algorithms with a negative Bernstein entry so far 2199346, distinct vectors 1267
+  a0 640/1024: algorithms with a negative Bernstein entry so far 3239368, distinct vectors 1267
+  a0 768/1024: algorithms with a negative Bernstein entry so far 3464135, distinct vectors 1267
+  a0 896/1024: algorithms with a negative Bernstein entry so far 4851238, distinct vectors 1279
+  a0 1024/1024: algorithms with a negative Bernstein entry so far 5234603, distinct vectors 1279
+algorithms with D == 0 identically: 1
+algorithms with a negative Bernstein entry: 5234603; distinct D vectors: 1279
+  NEGATIVE somewhere: (np.int32(0), np.int32(1), np.int32(1), np.int32(-1), np.int32(-1), np.int32(0), np.int32(0)) 1 odd-multiplicity roots in (0,1)
+  NEGATIVE somewhere: (np.int32(0), np.int32(2), np.int32(1), np.int32(-4), np.int32(-3), np.int32(0), np.int32(0)) 1 odd-multiplicity roots in (0,1)
+  NEGATIVE somewhere: (np.int32(0), np.int32(2), np.int32(2), np.int32(-4), np.int32(-5), np.int32(0), np.int32(1)) 2 odd-multiplicity roots in (0,1)
+  NEGATIVE somewhere: (np.int32(0), np.int32(2), np.int32(2), np.int32(-3), np.int32(-3), np.int32(1), np.int32(1)) 2 odd-multiplicity roots in (0,1)
+  NEGATIVE somewhere: (np.int32(0), np.int32(2), np.int32(2), np.int32(-2), np.int32(-2), np.int32(0), np.int32(0)) 1 odd-multiplicity roots in (0,1)
+  NEGATIVE somewhere: (np.int32(0), np.int32(2), np.int32(3), np.int32(-2), np.int32(-5), np.int32(-2), np.int32(0)) 1 odd-multiplicity roots in (0,1)
+  NEGATIVE somewhere: (np.int32(0), np.int32(2), np.int32(3), np.int32(0), np.int32(-1), np.int32(0), np.int32(0)) 1 odd-multiplicity roots in (0,1)
+  NEGATIVE somewhere: (np.int32(0), np.int32(3), np.int32(2), np.int32(-7), np.int32(-7), np.int32(0), np.int32(1)) 2 odd-multiplicity roots in (0,1)
+  NEGATIVE somewhere: (np.int32(0), np.int32(3), np.int32(2), np.int32(-7), np.int32(-6), np.int32(2), np.int32(2)) 2 odd-multiplicity roots in (0,1)
+  NEGATIVE somewhere: (np.int32(0), np.int32(3), np.int32(2), np.int32(-6), np.int32(-5), np.int32(1), np.int32(1)) 2 odd-multiplicity roots in (0,1)
+  NEGATIVE somewhere: (np.int32(0), np.int32(3), np.int32(2), np.int32(-5), np.int32(-4), np.int32(0), np.int32(0)) 1 odd-multiplicity roots in (0,1)
+  NEGATIVE somewhere: (np.int32(0), np.int32(3), np.int32(2), np.int32(-5), np.int32(-3), np.int32(2), np.int32(1)) 2 odd-multiplicity roots in (0,1)
+  NEGATIVE somewhere: (np.int32(0), np.int32(3), np.int32(3), np.int32(-5), np.int32(-7), np.int32(-2), np.int32(0)) 1 odd-multiplicity roots in (0,1)
+  NEGATIVE somewhere: (np.int32(0), np.int32(3), np.int32(3), np.int32(-5), np.int32(-6), np.int32(0), np.int32(1)) 2 odd-multiplicity roots in (0,1)
+  NEGATIVE somewhere: (np.int32(0), np.int32(3), np.int32(3), np.int32(-5), np.int32(-5), np.int32(2), np.int32(2)) 2 odd-multiplicity roots in (0,1)
+  NEGATIVE somewhere: (np.int32(0), np.int32(3), np.int32(3), np.int32(-4), np.int32(-4), np.int32(1), np.int32(1)) 2 odd-multiplicity roots in (0,1)
+  NEGATIVE somewhere: (np.int32(0), np.int32(3), np.int32(3), np.int32(-3), np.int32(-3), np.int32(0), np.int32(0)) 1 odd-multiplicity roots in (0,1)
+  NEGATIVE somewhere: (np.int32(0), np.int32(3), np.int32(4), np.int32(-3), np.int32(-6), np.int32(-2), np.int32(0)) 1 odd-multiplicity roots in (0,1)
+  NEGATIVE somewhere: (np.int32(0), np.int32(3), np.int32(4), np.int32(-3), np.int32(-5), np.int32(0), np.int32(1)) 2 odd-multiplicity roots in (0,1)
+  NEGATIVE somewhere: (np.int32(0), np.int32(3), np.int32(4), np.int32(-1), np.int32(-2), np.int32(0), np.int32(0)) 1 odd-multiplicity roots in (0,1)
+CERT FAILED on 282 distinct vectors

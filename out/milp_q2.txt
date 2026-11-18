@@ -1,0 +1,8 @@
+milp3.py:106: RuntimeWarning: Unrecognized options detected: {'mip_feasibility_tolerance'}. These will be passed to HiGHS verbatim.
+  res = milp(cvec, constraints=LinearConstraint(A.tocsr(), lo, hi), integrality=integrality,
+n=3 q=2 p=1/5 milp_status=0 milp_obj=0.729600000 mip_dual_bound=0.729600000 exact_rule_value=456/625 (0.729600000)
+   counts [1, 4, 9, 12, 8, 2, 0] value 0.729600 inputs 001 010 011 100 101 110
+n=3 q=2 p=1/2 milp_status=0 milp_obj=0.562500000 mip_dual_bound=0.562500000 exact_rule_value=9/16 (0.562500000)
+   counts [1, 4, 9, 12, 8, 2, 0] value 0.562500 inputs 001 010 011 100 101 110
+n=3 q=2 p=4/5 milp_status=0 milp_obj=0.321600000 mip_dual_bound=0.321600000 exact_rule_value=201/625 (0.321600000)
+   counts [1, 4, 9, 12, 8, 2, 0] value 0.321600 inputs 001 010 011 100 101 110

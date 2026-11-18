@@ -1,0 +1,44 @@
+n=3 q=3 p=6/25: OPTIMAL OPT=225153469/244140625 exact_eval=225153469/244140625 match=True
+   control t<=OPT-1: INFEASIBLE (must be INFEASIBLE); t<=OPT: OPTIMAL (must be FEASIBLE or OPTIMAL)
+   input 001 counts [1, 4, 10, 16, 13, 4, 0]
+   input 002 counts [1, 4, 10, 16, 13, 4, 0]
+   input 010 counts [1, 4, 10, 16, 13, 4, 0]
+   input 011 counts [1, 4, 9, 12, 8, 2, 0]
+   input 012 counts [1, 6, 12, 17, 14, 6, 1]
+   input 020 counts [1, 4, 10, 16, 13, 4, 0]
+   input 021 counts [1, 6, 12, 17, 14, 6, 1]
+   input 022 counts [1, 4, 9, 12, 8, 2, 0]
+   input 100 counts [1, 4, 10, 16, 13, 4, 0]
+   input 101 counts [1, 4, 9, 12, 8, 2, 0]
+   input 102 counts [1, 6, 12, 17, 14, 6, 1]
+   input 110 counts [1, 4, 9, 12, 8, 2, 0]
+   input 112 counts [1, 4, 10, 16, 13, 4, 0]
+   input 120 counts [1, 6, 12, 17, 14, 6, 1]
+   input 121 counts [1, 4, 10, 16, 13, 4, 0]
+   input 122 counts [1, 4, 9, 12, 8, 2, 0]
+   input 200 counts [1, 4, 10, 16, 13, 4, 0]
+   input 201 counts [1, 6, 12, 17, 14, 6, 1]
+   input 202 counts [1, 4, 9, 12, 8, 2, 0]
+   input 210 counts [1, 6, 12, 17, 14, 6, 1]
+   input 211 counts [1, 4, 10, 16, 13, 4, 0]
+   input 212 counts [1, 4, 9, 12, 8, 2, 0]
+   input 220 counts [1, 4, 9, 12, 8, 2, 0]
+   input 221 counts [1, 4, 9, 12, 8, 2, 0]
+        1.93 real         0.93 user         0.56 sys
+           144474112  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+               22640  page reclaims
+                2945  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                1297  voluntary context switches
+                3069  involuntary context switches
+         13163629021  instructions retired
+          5406760011  cycles elapsed
+           100287160  peak memory footprint

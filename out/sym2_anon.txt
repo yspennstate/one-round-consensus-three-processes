@@ -1,0 +1,22 @@
+Q=2 anon p=1/5: OPTIMAL OPT=456/625  control OPT-1: INFEASIBLE
+   own 0 heard [0, 1] -> 0; own 0 heard [1] -> 1; own 0 heard [1, 1] -> 1; own 1 heard [0] -> 0; own 1 heard [0, 0] -> 0; own 1 heard [0, 1] -> 1
+Q=2 anon p=1/2: OPTIMAL OPT=9/16  control OPT-1: INFEASIBLE
+   own 0 heard [0, 1] -> 0; own 0 heard [1] -> 1; own 0 heard [1, 1] -> 1; own 1 heard [0] -> 0; own 1 heard [0, 0] -> 0; own 1 heard [0, 1] -> 1
+        0.87 real         0.84 user         0.40 sys
+           123092992  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+               24288  page reclaims
+                  17  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   3  voluntary context switches
+                 474  involuntary context switches
+          8768898442  instructions retired
+          4050596152  cycles elapsed
+            78889656  peak memory footprint
